@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime & Twin Prime Finder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Prime & Twin Prime Finder</h1>
+        <p>Enter two numbers to find all prime numbers and twin primes between them.</p>
+        
+        <div class="input-group">
+            <input type="number" id="startNumber" placeholder="Start Number" min="2">
+            <input type="number" id="endNumber" placeholder="End Number" min="2">
+            <button onclick="computePrimes()">Compute</button>
+        </div>
+        
+        <div id="result">
+            <p id="timeEstimate"></p>
+            <p id="primeCount"></p>
+            <p id="twinPrimeCount"></p>
+            <p id="twinPrimeList"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
