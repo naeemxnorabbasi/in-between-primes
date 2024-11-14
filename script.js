@@ -37,8 +37,30 @@ function computePrimes() {
     // Estimate time based on range size
     const estimatedTime = Math.max(0.01, (endNumber - startNumber) / 10000).toFixed(2);
 
+    // Display results
     document.getElementById("timeEstimate").innerText = `Estimated computation time: ${estimatedTime} seconds`;
     document.getElementById("primeCount").innerText = `Prime numbers found: ${primes.length}`;
+    document.getElementById("primeList").innerText = `Primes: ${primes.join(", ")}`;
     document.getElementById("twinPrimeCount").innerText = `Twin prime pairs found: ${twinPrimes.length}`;
     document.getElementById("twinPrimeList").innerText = `Twin primes: ${twinPrimes.map(pair => `[${pair[0]}, ${pair[1]}]`).join(", ")}`;
+}
+
+// Function to save results to a text file
+function saveResults() {
+    const timeEstimate = document.getElementById("timeEstimate").innerText;
+    const primeCount = document.getElementById("primeCount").innerText;
+    const primeList = document.getElementById("primeList").innerText;
+    const twinPrimeCount = document.getElementById("twinPrimeCount").innerText;
+    const twinPrimeList = document.getElementById("twinPrimeList").innerText;
+
+    const content = `${timeEstimate}\n\n${primeCount}\n${primeList}\n\n${twinPrimeCount}\n${twinPrimeList}`;
+    const blob = new Blob([content], { type: "text/plain" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+
+    link.href = url;
+    link.download = "PrimeTwinPrimeResults.txt";
+    link.click();
+
+    URL.revokeObjectURL(url);
 }

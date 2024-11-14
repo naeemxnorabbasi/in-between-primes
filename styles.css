@@ -50,7 +50,21 @@ button:hover {
     background-color: #0056b3;
 }
 
+#result {
+    text-align: left;
+    margin-top: 20px;
+}
+
 #result p {
-    margin: 10px 0;
+    margin: 5px 0;
     color: #555;
+}
+
+button#saveResults {
+    margin-top: 15px;
+    background-color: #28a745;
+}
+
+button#saveResults:hover {
+    background-color: #218838;
 }
